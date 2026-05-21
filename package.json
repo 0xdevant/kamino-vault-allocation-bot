@@ -1,0 +1,36 @@
+{
+  "name": "kamino-vault-allocation-bot",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "A yield-maximizing capital allocator across Kamino Finance lending vaults, with vault screening and an automatic risk circuit-breaker engine. Dry-run by default.",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "tsx src/index.ts run",
+    "restart": "rm -rf data/history.json && tsx src/index.ts run",
+    "dev": "tsx watch src/index.ts run",
+    "screen": "tsx src/index.ts screen",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@kamino-finance/klend-sdk": "^7.3.22",
+    "@solana/kit": "^2.1.0",
+    "decimal.js": "^10.4.3",
+    "dotenv": "^16.4.5",
+    "zod": "^4.4.3"
+  },
+  "comment:overrides": "klend-sdk@7.3.22 requires the @codegen/farms/programId module that farms-sdk removed in a >=3.2.25 patch (broken semver upstream). Pin the last compatible transitive versions so the SDK actually loads.",
+  "overrides": {
+    "@kamino-finance/farms-sdk": "3.2.24"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "tsx": "^4.16.0",
+    "typescript": "^5.5.0",
+    "vitest": "^2.0.0"
+  }
+}
