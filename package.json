@@ -28,9 +28,9 @@
     "@kamino-finance/farms-sdk": "3.2.24"
   },
   "devDependencies": {
-    "@types/node": "^20.14.0",
-    "tsx": "^4.16.0",
-    "typescript": "^5.5.0",
-    "vitest": "^2.0.0"
+    "@types/node": "^25.9.1",
+    "tsx": "^4.22.3",
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.7"
   }
 }
